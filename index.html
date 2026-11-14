@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <!-- AI Disclaimer: this website was created with the help of google code suggestions and copilot code completion suggestions.  -->
+
 <head>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -21,7 +22,7 @@
             </ul>
         </div>
     </nav>
-    <div id="home" class="site-tab">
+    <div id="home" class="site-tab" style="display:block;">
         <div class="container">
             <div class="row">
                 <div class="col col-sm-6">
@@ -30,7 +31,7 @@
                     </div>
                     <p>I am a doctoral student in Computer Science at New Mexico State University.</p>
                 </div>
-                <div <div class="col col-sm-6">
+                <div class="col col-sm-6">
                     <div><img src="assets/SarahThomasYWICProfile.png" class="img-fluid rounded-circle"
                             alt="Profile Image">
                     </div>
@@ -42,34 +43,273 @@
                         <h2>About Me</h2>
                     </div>
                     <div>
-<p>My research interests include Reinforcement Learning, Explainable AI, and Human-Aware Artificial Intelligence. </p>
-                    <p>I am open to collaboration! Email me at sarah95@nmsu.edu.</p>
+                        <p>My research interests include Reinforcement Learning, Explainable AI, and Human-Aware
+                            Artificial Intelligence. </p>
+                        <p>I am open to collaboration! Email me at sarah95@nmsu.edu.</p>
                     </div>
-                    <a href="sarah_thomas_cv.pdf" target="_blank" rel="noopener noreferrer">
-  View My CV
-</a>
-                </div>
-        </div>
-    </div>
-    <div id="projects" style="display:none;" class="site-tab">
-        <div class="container">
-            <div class="row">
-                <div class="col col-sm-6">
-                    <h2>Projects</h2>
-                    <p>Here are some of my projects.</p>
-                </div>
-                <div class="col col-sm-6">
-                    <ul>
-                        <li><a href="#">Project 1</a></li>
-                        <li><a href="#">Project 2</a></li>
-                        <li><a href="#">Project 3</a></li>
-                    </ul>
+                    <a href="sarah_thomas_cv.pdf" target="_blank" rel="noopener noreferrer" class="cv-link">
+                        View My CV
+                    </a>
                 </div>
             </div>
         </div>
     </div>
+    <div id="projects" class="site-tab" style="display:none; padding-top: 20px;">
+        <div class="container" style="display: block !important; margin-bottom: 20px;">
+            <div class="row" style="display: flex !important;">
+                <div class="col col-sm-12" style="display: block !important;">
+                    <h2>Projects</h2>
+                    <p>Here are some of my projects.</p>
+                </div>
+            </div>
+        </div>
+        <div class="container" style="display: block !important; max-height: calc(100vh - 280px); overflow-y: auto;">
+            <div class="row" id="projects-container" style="display: block !important;">
+                <!-- Project 1 -->
+                <div class="project-item" data-project-id="rooted" style="display: flex; align-items: flex-start; margin-bottom: 8px; padding: 10px; gap: 10px; cursor: pointer;">
+                    <div style="flex: 0 0 22%; display: block !important;">
+                        <img src="assets/projects/rooted.png" alt="Rooted Task Management App" style="width: 100%; height: auto; object-fit: cover;">
+                    </div>
+                    <div style="flex: 1; display: block !important;">
+                        <h5 style="color: var(--deep-rose); font-weight: bold; margin-bottom: 8px; font-size: 0.95rem;">Rooted Task Management App</h5>
+                        <p style="color: var(--deep-rose); font-size: 0.8rem; margin-bottom: 0; line-height: 1.2;">Designed for neurodivergent folks, rooted helps users management daily tasks while reducing cognitive load. The app provides cute in-app incentives stylized as virtual plant collection.</p>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-item" data-project-id="blood-pressure" style="display: flex; align-items: flex-start; margin-bottom: 8px; padding: 10px; gap: 10px; cursor: pointer;">
+                    <div style="flex: 0 0 22%; display: block !important;">
+                        <img src="assets/projects/BloodPressureSquare.png" alt="Blood Pressure Prototype" style="width: 100%; height: auto; object-fit: cover;">
+                    </div>
+                    <div style="flex: 1; display: block !important;">
+                        <h5 style="color: var(--deep-rose); font-weight: bold; margin-bottom: 8px; font-size: 0.95rem;">Home Blood Pressure Cuff Redesign</h5>
+                        <p style="color: var(--deep-rose); font-size: 0.8rem; margin-bottom: 0; line-height: 1.2;">To make home blood pressure cuffs more accessible to users with visula impairment, I redesigned a home blood pressure cuff to include multi-sensory feedback such as auditory and tactile cues.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Project Detail Pages -->
+    <div id="project-rooted" class="site-tab" style="display:none; padding-top: 20px;">
+        <div class="container">
+            <a id="back-link" style="color: var(--dark-olive); cursor: pointer; margin-bottom: 20px; display: inline-block;">← Back to Projects</a>
+            <div class="row">
+                <div class="col col-sm-12">
+                    <h2>Rooted Task Management App</h2>
+                </div>
+            </div>
+
+            <!-- Video and Features Section -->
+            <div class="row rooted-overview" style="display: flex; gap: 20px;">
+                <!-- Video Section -->
+                <div style="flex: 2; min-width: 0;">
+                    <video class="rooted-demo-video" width="100%" controls>
+                        <source src="assets/projects/rooted/Prototype_Demo.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
+                <!-- Features Section -->
+                <div style="flex: 1; min-width: 0;">
+                    <h3>Motivation</h3>
+                    <p style="color: var(--deep-rose); line-height: 1.5;">Neurodivergent users, particularly autistic users and folks with ADHD, indicated a need for support specific to their neurotype. The emergence of anxiety as a theme indicates that users need an app that actively combats anxiety both aesthetically and by providing organization tools that can help quiet a busy mind.</p>
+                </div>
+            </div>
+
+            <ul class="nav nav-tabs rooted-sub-tabs" role="tablist" style="margin-bottom: 20px;">
+                <li class="nav-item">
+                    <a class="nav-link active" id="rooted-topic-modeling-tab" data-toggle="tab"
+                        href="#rooted-topic-modeling" role="tab" aria-controls="rooted-topic-modeling"
+                        aria-selected="true">Topic Modeling</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="rooted-prototypes-tab" data-toggle="tab" href="#rooted-prototypes"
+                        role="tab" aria-controls="rooted-prototypes" aria-selected="false">Prototypes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="rooted-survey-tab" data-toggle="tab" href="#rooted-survey" role="tab"
+                        aria-controls="rooted-survey" aria-selected="false">Survey</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane fade show active" id="rooted-topic-modeling" role="tabpanel"
+                    aria-labelledby="rooted-topic-modeling-tab">
+                    <div class="table-responsive">
+                        <table class="table table-bordered rooted-topic-table">
+
+                            <thead>
+                                <tr>
+                                    <th scope="col">Support area</th>
+                                    <th scope="col">Goal</th>
+                                    <th scope="col">Interfaces and activities</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Executive function support</th>
+                                    <td>Support executive functioning.</td>
+                                    <td>
+                                        <ol type="a">
+                                            <li>Manually create to-do lists</li>
+                                            <li>Have AI break down textual brain dumps into actionable tasks</li>
+                                            <li>Schedule tasks and send the user reminders</li>
+                                        </ol>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Rewards and Motivation</th>
+                                    <td>Create a gamified, motivating experience.</td>
+                                    <td>
+                                        <ol type="a">
+                                            <li>Appealing visuals</li>
+                                            <li>Virtual pet mechanic</li>
+                                            <li>Rewards for self or virtual pet, e.g., clothes</li>
+                                        </ol>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Mental Health Support</th>
+                                    <td>Provide mental health support that facilitates productivity.</td>
+                                    <td>
+                                        <ol type="a">
+                                            <li>White noise</li>
+                                            <li>Journaling</li>
+                                            <li>Meditation</li>
+                                            <li>Gratitude</li>
+                                        </ol>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="rooted-prototypes" role="tabpanel"
+                    aria-labelledby="rooted-prototypes-tab">
+                    <div class="row" style="margin-bottom: 40px;">
+                        <div class="col col-sm-12">
+                            <h3>Prototype Images</h3>
+                            <div class="custom-carousel" data-carousel="prototype">
+                                <div class="carousel-main-container">
+                                    <a class="carousel-nav carousel-nav-prev" href="#" data-direction="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    </a>
+                                    <div class="carousel-main">
+                                        <img class="carousel-featured-image"
+                                            src="assets/projects/rooted/Prototypes/GrowGrattitude.png"
+                                            alt="Grow Gratitude prototype">
+                                    </div>
+                                    <a class="carousel-nav carousel-nav-next" href="#" data-direction="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    </a>
+                                </div>
+                                <div class="carousel-thumbnails">
+                                    <div class="carousel-thumb-container">
+                                        <img class="carousel-thumbnail" data-index="0"
+                                            src="assets/projects/rooted/Prototypes/GrowGrattitude.png"
+                                            alt="Grow Gratitude prototype thumbnail">
+                                    </div>
+                                    <div class="carousel-thumb-container">
+                                        <img class="carousel-thumbnail" data-index="1"
+                                            src="assets/projects/rooted/Prototypes/PlantShelf.png"
+                                            alt="Plant Shelf prototype thumbnail">
+                                    </div>
+                                    <div class="carousel-thumb-container">
+                                        <img class="carousel-thumbnail" data-index="2"
+                                            src="assets/projects/rooted/Prototypes/HomeScreen.png"
+                                            alt="Home Screen prototype thumbnail">
+                                    </div>
+                                    <div class="carousel-thumb-container">
+                                        <img class="carousel-thumbnail" data-index="3"
+                                            src="assets/projects/rooted/Prototypes/Categories.png"
+                                            alt="Categories prototype thumbnail">
+                                    </div>
+                                    <div class="carousel-thumb-container">
+                                        <img class="carousel-thumbnail" data-index="4"
+                                            src="assets/projects/rooted/Prototypes/AddTask.png"
+                                            alt="Add Task prototype thumbnail">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="rooted-survey" role="tabpanel" aria-labelledby="rooted-survey-tab">
+                    <div class="row" style="margin-bottom: 40px;">
+                        <div class="col col-sm-12">
+                            <h3>Survey Results</h3>
+                            <div class="custom-carousel" data-carousel="survey">
+                                <div class="carousel-main-container">
+                                    <a class="carousel-nav carousel-nav-prev" href="#" data-direction="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    </a>
+                                    <div class="carousel-main">
+                                        <img class="carousel-featured-image"
+                                            src="assets/projects/rooted/Survey/LikelyToSwitch.png" alt="Survey Image">
+                                    </div>
+                                    <a class="carousel-nav carousel-nav-next" href="#" data-direction="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    </a>
+                                </div>
+                                <div class="carousel-thumbnails">
+                                    <div class="carousel-thumb-container">
+                                        <img class="carousel-thumbnail" data-index="0"
+                                            src="assets/projects/rooted/Survey/LikelyToSwitch.png" alt="Thumbnail">
+                                    </div>
+                                    <div class="carousel-thumb-container">
+                                        <img class="carousel-thumbnail" data-index="1"
+                                            src="assets/projects/rooted/Survey/PriorUse.png" alt="Thumbnail">
+                                    </div>
+                                    <div class="carousel-thumb-container">
+                                        <img class="carousel-thumbnail" data-index="2"
+                                            src="assets/projects/rooted/Survey/AITaskBreakdown.png" alt="Thumbnail">
+                                    </div>
+                                    <div class="carousel-thumb-container">
+                                        <img class="carousel-thumbnail" data-index="3"
+                                            src="assets/projects/rooted/Survey/PersonalStreak.png" alt="Thumbnail">
+                                    </div>
+                                    <div class="carousel-thumb-container">
+                                        <img class="carousel-thumbnail" data-index="4"
+                                            src="assets/projects/rooted/Survey/ScheduleTasksReminders.png"
+                                            alt="Thumbnail">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="project-blood-pressure" class="site-tab" style="display:none; padding-top: 20px;">
+        <div class="container">
+            <a id="back-link" style="color: var(--dark-olive); cursor: pointer; margin-bottom: 20px; display: inline-block;">← Back to Projects</a>
+            <div class="row">
+                <div class="col col-sm-12">
+                    <h2>Home Blood Pressure Cuff Redesign</h2>
+                    <img src="assets/projects/BloodPressurePrototype.drawio.png" alt="Blood Pressure Prototype" style="width: 100%; max-width: 600px; height: auto; margin-bottom: 20px;">
+                    <h3 style="margin-top: 20px;">Overview</h3>
+                    <p>A redesign of the home blood pressure cuff interface to improve usability and user experience for patients monitoring their health.</p>
+                    <h3>Design Goals</h3>
+                    <ul>
+                        <li>Simplify user interface</li>
+                        <li>Improve accessibility</li>
+                        <li>Enhance data visualization</li>
+                        <li>Reduce measurement errors</li>
+                    </ul>
+                    <h3>Approach</h3>
+                    <p>User-centered design with extensive testing and feedback from real users.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="site-footer">
+        This website was created with assistance from GitHub Copilot, an AI coding assistant.
+    </footer>
 </body>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"></script>
 <script src="scripts/navigation.js"></script>
 
 

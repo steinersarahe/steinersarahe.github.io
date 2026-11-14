@@ -1,0 +1,285 @@
+// Color Palette Variables
+$dark-olive: #625B30;
+$berry: #AD2D5B;
+$deep-rose: #340D1B;
+$pale-yellow: #ECE9D8;
+$olive: #BAAF71;
+
+// Apply color variables throughout
+:root {
+    --dark-olive: #{$dark-olive};
+    --berry: #{$berry};
+    --deep-rose: #{$deep-rose};
+    --pale-yellow: #{$pale-yellow};
+    --olive: #{$olive};
+}
+
+body {
+    background-color: $pale-yellow;
+    color: $deep-rose;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: $deep-rose;
+}
+
+h1 {
+    font-size: 10em;
+}
+
+a {
+    color: $dark-olive;
+
+    &:hover {
+        color: $berry;
+    }
+}
+
+.cv-link {
+    color: $berry !important;
+    font-weight: bold;
+    text-decoration: underline;
+
+    &:hover {
+        color: $berry;
+    }
+}
+
+.navbar {
+    background-color: $pale-yellow !important;
+    border-bottom: 3px solid $pale-yellow;
+    margin-bottom: 30px;
+}
+
+.nav-link {
+    color: $deep-rose !important;
+    font-weight: 500;
+    transition: font-weight 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+        font-weight: bold;
+        cursor: pointer;
+    }
+}
+
+.card {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    background-color: $pale-yellow;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    }
+}
+
+.card-title {
+    color: $dark-olive;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.card-text {
+    color: $deep-rose;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+.btn-primary {
+    background-color: $berry;
+    border-color: $berry;
+
+    &:hover {
+        background-color: $dark-olive;
+        border-color: $dark-olive;
+    }
+}
+
+p {
+    color: $deep-rose;
+}
+
+.table {
+    color: $deep-rose;
+}
+
+.rooted-sub-tabs {
+    border-bottom-color: $deep-rose;
+
+    .nav-link.active {
+        color: #fff !important;
+        background-color: $deep-rose;
+        border-color: $deep-rose;
+    }
+}
+
+.rooted-topic-table.table-bordered {
+    td,
+    th {
+        border-color: $deep-rose;
+    }
+}
+
+.rooted-overview {
+    margin-bottom: clamp(12px, 2vh, 24px);
+}
+
+.rooted-demo-video {
+    display: block;
+    width: 100%;
+    height: max(120px, min(30vh, calc(100vh - 350px)));
+    background-color: #000;
+    object-fit: contain;
+}
+
+.site-footer {
+    margin-top: 2rem;
+    padding: 0.75rem 1rem;
+    border-top: 1px solid $deep-rose;
+    color: $deep-rose;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+// Hide scrollbar but allow scrolling
+.site-tab > .container:last-of-type {
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+// Custom Carousel - Featured with Thumbnails
+.custom-carousel {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.carousel-main-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+}
+
+.carousel-main {
+    flex: 1;
+    max-width: 500px;
+    max-height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--pale-yellow);
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.carousel-featured-image {
+    max-height: 250px;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.carousel-nav {
+    background: none;
+    border: none;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+    text-decoration: none;
+}
+
+.carousel-nav:hover {
+    opacity: 1;
+}
+
+.carousel-thumbnails {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.carousel-thumb-container {
+    width: 80px;
+    height: 80px;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.carousel-thumb-container:hover {
+    border-color: var(--berry);
+    transform: scale(1.05);
+}
+
+.carousel-thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background-color: var(--pale-yellow);
+    padding: 5px;
+}
+
+.carousel-thumbnail.active {
+    border-color: var(--deep-rose);
+    background-color: var(--dark-olive);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 24px;
+    height: 24px;
+    background-color: transparent;
+    background-image: none;
+    border: 2px solid var(--deep-rose);
+    display: inline-block;
+    position: relative;
+}
+
+.carousel-control-prev-icon {
+    border-right: 2px solid var(--deep-rose);
+    border-bottom: 2px solid var(--deep-rose);
+    border-left: none;
+    border-top: none;
+    transform: rotate(135deg);
+}
+
+.carousel-control-next-icon {
+    border-right: none;
+    border-bottom: none;
+    border-left: 2px solid var(--deep-rose);
+    border-top: 2px solid var(--deep-rose);
+    transform: rotate(135deg);
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    position: static;
+    width: auto;
+    height: auto;
+    opacity: 1;
+    background-color: transparent;
+    transform: none;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background-color: transparent;
+}
+
+.carousel-control-prev:hover .carousel-control-prev-icon,
+.carousel-control-next:hover .carousel-control-next-icon {
+    border-color: var(--berry);
+}

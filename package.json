@@ -1,0 +1,26 @@
+{
+  "name": "steinersarahe.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass style.scss style.css",
+    "sass:watch": "sass --watch . --poll"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/steinersarahe/steinersarahe.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/steinersarahe/steinersarahe.github.io/issues"
+  },
+  "homepage": "https://github.com/steinersarahe/steinersarahe.github.io#readme",
+  "devDependencies": {
+    "sass": "^1.108.2"
+  }
+}
